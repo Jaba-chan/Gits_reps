@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:fitsSystemWindows="true">
+
+    <ImageView
+        android:id="@+id/ivGit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/desc_iv_git"
+        android:src="@drawable/ic_git"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilToken"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/action_button_margin"
+        android:hint="@string/personal_access_token"
+        android:textColorHint="?android:textColorHint"
+        app:errorEnabled="true"
+        app:helperTextEnabled="true"
+        app:errorIconDrawable="@null"
+        app:helperTextTextColor="?colorError"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivGit">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edToken"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="?android:windowBackground"
+            android:inputType="text"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="@dimen/token_text_size"
+            android:imeOptions="actionDone"
+            tools:text="Φhp_lqIMN0ZH6z0wIEB4T9A2g4EΦhp_lqIMN0ZH6z0wIEB4T9A2g4E" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="@dimen/action_button_margin">
+        <include android:id="@+id/btSingIn"
+            layout="@layout/button"/>
+        <include android:id="@+id/pb"
+            layout="@layout/progress_bar"/>
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

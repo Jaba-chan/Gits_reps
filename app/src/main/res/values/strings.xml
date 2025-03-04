@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Gits_reps</string>
+    <string name="sing_in">SING IN</string>
+    <string name="desc_iv_git">This is GitHub icon.</string>
+    <string name="personal_access_token">Personal access token</string>
+    <string name="repositories">Repositories</string>
+    <string name="desc_ib_input">This is Input button.</string>
+    <string name="refresh">Refresh</string>
+    <string name="desc_iv_request_state">This is info about request state.</string>
+    <string name="error">Error</string>
+    <string name="error_dialog_text">Error data / error code\ninformation for developers</string>
+    <string name="OK">OK</string>
+    <string name="connection_error">Connection error</string>
+    <string name="something_error">Something error</string>
+    <string name="check_your_internet_connection">Check your Internet connection</string>
+    <string name="check_your_something">Check your something</string>
+    <string name="empty">Empty</string>
+    <string name="no_repositories_at_the_moment">No repositories at the moment</string>
+    <string name="retry">RETRY</string>
+    <string name="desc_ll_link">This is repository link.</string>
+    <string name="desc_ll_license">This is license icon</string>
+    <string name="license">License</string>
+    <string name="desc_rate_group">This is rate group icon</string>
+    <string name="no_readme_md">No README.md</string>
+    <string name="invalid_token">Invalid token</string>
+    <string name="stars">stars</string>
+    <string name="forks">forks</string>
+    <string name="watchers">watchers</string>
+    <string name="desc_back_button">This is back button</string>
+</resources>

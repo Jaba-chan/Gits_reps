@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sv"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clDetailInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/cl_detail_info_margin_horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+            <TextView
+                android:id="@+id/tvLink"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/cl_detail_info_margin_horizontal"
+                android:layout_marginTop="@dimen/detail_info_main_margin_top"
+                android:layout_marginEnd="@dimen/tv_link_margin_end"
+                android:drawablePadding="@dimen/tv_link_drawable_padding"
+                android:textColor="?colorSecondary"
+                android:textSize="@dimen/detail_info_main_text_size"
+                app:drawableStartCompat="@drawable/ic_link"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="github.com/icerockdev/moko-resources" />
+
+            <TextView
+                android:id="@+id/tvLicense"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/detail_info_main_margin_top"
+                android:drawablePadding="@dimen/detail_info_default_drawable_padding"
+                android:text="@string/license"
+                android:textColor="?android:textColorPrimary"
+                android:textSize="@dimen/detail_info_main_text_size"
+                app:drawableStartCompat="@drawable/ic_license"
+                app:layout_constraintStart_toStartOf="@id/tvLink"
+                app:layout_constraintTop_toBottomOf="@id/tvLink" />
+
+            <TextView
+                android:id="@+id/tvLicenseName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/tv_license_name_margin_horizontal"
+                android:textColor="?android:textColorPrimary"
+                android:textSize="@dimen/detail_info_main_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvLicense"
+                tools:text="Apache-2.0" />
+
+            <TextView
+                android:id="@+id/tvStartsRate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/detail_info_main_margin_top"
+                android:drawablePadding="@dimen/detail_info_default_drawable_padding"
+                android:textColor="@color/starsColor"
+                android:textSize="@dimen/detail_info_main_text_size"
+                app:drawableStartCompat="@drawable/ic_stars"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvLicense"
+                tools:text="255" />
+
+            <TextView
+                android:id="@+id/tvStars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/detail_info_default_drawable_padding"
+                android:textColor="?android:textColorPrimary"
+                android:textSize="@dimen/detail_info_main_text_size"
+                app:layout_constraintStart_toEndOf="@id/tvStartsRate"
+                app:layout_constraintTop_toTopOf="@id/tvStartsRate"
+                android:text="@string/stars" />
+
+            <TextView
+                android:id="@+id/tvForksRate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/detail_info_default_drawable_padding"
+                android:textColor="@color/forksColor"
+                android:textSize="@dimen/detail_info_main_text_size"
+                app:drawableStartCompat="@drawable/ic_forks"
+                app:layout_constraintEnd_toStartOf="@id/tvForks"
+                app:layout_constraintStart_toEndOf="@+id/tvStars"
+                app:layout_constraintTop_toTopOf="@id/tvStartsRate"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                tools:text="255" />
+
+            <TextView
+                android:id="@+id/tvForks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/detail_info_default_drawable_padding"
+                android:textColor="?android:textColorPrimary"
+                android:textSize="@dimen/detail_info_main_text_size"
+                app:layout_constraintStart_toEndOf="@id/tvForksRate"
+                app:layout_constraintEnd_toStartOf="@id/tvWatchersRate"
+                app:layout_constraintTop_toTopOf="@id/tvForksRate"
+                android:text="@string/forks" />
+
+            <TextView
+                android:id="@+id/tvWatchersRate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/detail_info_default_drawable_padding"
+                android:textColor="@color/watchersColor"
+                android:textSize="@dimen/detail_info_main_text_size"
+                android:layout_marginEnd="@dimen/detail_info_default_drawable_padding"
+                app:drawableStartCompat="@drawable/ic_watchers"
+                app:layout_constraintEnd_toStartOf="@id/tvWatchers"
+                app:layout_constraintTop_toTopOf="@id/tvForks"
+                tools:text="245" />
+
+            <TextView
+                android:id="@+id/tvWatchers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="?android:textColorPrimary"
+                android:textSize="@dimen/detail_info_main_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvWatchersRate"
+                android:text="@string/watchers" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tvReadme"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/tv_readme_margin_horizontal"
+            android:layout_marginTop="@dimen/detail_info_main_margin_top"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="@dimen/detail_info_main_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clDetailInfo"
+            tools:text="This is a Kotlin MultiPlatform library that provides
+            access to the resources on iOS &amp; Android
+            with the support of the default system localization." />
+
+        <include
+            android:id="@+id/pbReadme"
+            layout="@layout/progress_bar"
+            android:layout_width="@dimen/pb_small_size"
+            android:layout_height="@dimen/pb_small_size"
+            android:layout_marginTop="@dimen/detail_info_main_margin_top"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clDetailInfo"
+            tools:visibility="visible" />
+
+        <include
+            android:id="@+id/messageGroup"
+            layout="@layout/message_group"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clDetailInfo"
+            tools:visibility="visible" />
+
+        <include
+            android:id="@+id/pbDetailInfo"
+            layout="@layout/progress_bar"
+            android:layout_width="@dimen/pb_big_size"
+            android:layout_height="@dimen/pb_big_size"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

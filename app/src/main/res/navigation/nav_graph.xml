@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/repositoriesListFragment">
+
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="ru.evgenykuzakov.gits_reps.presentation.auth.AuthFragment"
+        android:label="AuthFragment"
+        tools:layout="@layout/auth_fragment">
+
+        <action
+            android:id="@+id/action_authFragment_to_repositoriesListFragment"
+            app:destination="@id/repositoriesListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/repositoriesListFragment"
+        android:name="ru.evgenykuzakov.gits_reps.presentation.repositories_list.RepositoriesListFragment"
+        android:label="RepositoriesListFragment"
+        tools:layout="@layout/repositories_list_fragment">
+        <action
+            android:id="@+id/action_repositoriesListFragment_to_detailInfoFragment"
+            app:destination="@id/detailInfoFragment" />
+        <action
+            android:id="@+id/action_repositoriesListFragment_to_authFragment"
+            app:destination="@id/authFragment" />
+        <argument
+            android:name="isUserAuth"
+            app:argType="boolean"/>
+    </fragment>
+    <fragment
+        android:id="@+id/detailInfoFragment"
+        android:name="ru.evgenykuzakov.gits_reps.presentation.detail_info.DetailInfoFragment"
+        android:label="DetailInfoFragment"
+        tools:layout="@layout/detail_info_fragment">
+        <argument
+            android:name="repoName"
+            app:argType="string" />
+        <argument
+            android:name="owner"
+            app:argType="string" />
+        <argument
+            android:name="defaultBranch"
+            app:argType="string" />
+    </fragment>
+</navigation>

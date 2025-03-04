@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="action_button_margin">16dp</dimen>
+    <dimen name="bt_sing_in_corner_rad">8dp</dimen>
+    <dimen name="token_text_size">16sp</dimen>
+    <dimen name="repos_heading_text_size">20sp</dimen>
+    <dimen name="ib_input_margin_end">16dp</dimen>
+    <dimen name="message_text_size">16sp</dimen>
+    <dimen name="extra_info_text_size">14sp</dimen>
+    <dimen name="massage_padding">6dp</dimen>
+    <dimen name="extra_info_padding">2dp</dimen>
+    <dimen name="progress_bar_size">56dp</dimen>
+    <dimen name="repository_name">16sp</dimen>
+    <dimen name="tv_repo_margin_top">14dp</dimen>
+    <dimen name="language_text_size">12sp</dimen>
+    <dimen name="repo_item_main_margin">16dp</dimen>
+    <dimen name="alert_dialog_title_size">30sp</dimen>
+    <dimen name="alert_dialog_text_size">20sp</dimen>
+    <dimen name="bt_sing_in_text_size">14sp</dimen>
+    <dimen name="pb_small_size">24dp</dimen>
+    <dimen name="pb_big_size">56dp</dimen>
+    <dimen name="detail_info_main_text_size">16sp</dimen>
+    <dimen name="tv_link_margin_end">8dp</dimen>
+    <dimen name="detail_info_default_drawable_padding">4dp</dimen>
+    <dimen name="tv_link_drawable_padding">8dp</dimen>
+    <dimen name="tv_license_name_margin_horizontal">16dp</dimen>
+    <dimen name="detail_info_main_margin_top">24dp</dimen>
+    <dimen name="tv_readme_margin_horizontal">8dp</dimen>
+    <dimen name="toolbar_tv_title_margin_start">24dp</dimen>
+    <dimen name="toolbar_tv_title_margin_end">28dp</dimen>
+    <dimen name="cl_detail_info_margin_horizontal">16dp</dimen>
+    <dimen name="ib_navigation_margin_start">8dp</dimen>
+</resources>
