@@ -13,11 +13,9 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import ru.evgenykuzakov.gits_reps.R
 import ru.evgenykuzakov.gits_reps.databinding.AuthFragmentBinding
-import ru.evgenykuzakov.gits_reps.presentation.detail_info.RepositoryInfoViewModel
 
 @AndroidEntryPoint
 class AuthFragment : Fragment(R.layout.auth_fragment) {
@@ -45,7 +43,7 @@ class AuthFragment : Fragment(R.layout.auth_fragment) {
         bindToViewModel()
     }
 
-    private fun initViews(){
+    private fun initViews() {
         binding.btSingIn.root.setOnClickListener {
             if (viewModel.state.value != AuthViewModel.State.Loading) {
                 viewModel.onSignButtonPressed()
@@ -61,11 +59,14 @@ class AuthFragment : Fragment(R.layout.auth_fragment) {
         }
     }
 
-    private fun bindToViewModel(){
+    private fun bindToViewModel() {
         viewModel.state.observe(viewLifecycleOwner) { state ->
-            binding.pb.root.visibility = if (state == AuthViewModel.State.Loading) View.VISIBLE else View.INVISIBLE
-            binding.btSingIn.root.text = if (state == AuthViewModel.State.Loading) "" else getString(R.string.sing_in)
-            binding.tilToken.error = if (state is AuthViewModel.State.InvalidInput) getString(R.string.invalid_token) else null
+            binding.pb.root.visibility =
+                if (state == AuthViewModel.State.Loading) View.VISIBLE else View.INVISIBLE
+            binding.btSingIn.root.text =
+                if (state == AuthViewModel.State.Loading) "" else getString(R.string.sing_in)
+            binding.tilToken.error =
+                if (state is AuthViewModel.State.InvalidInput) getString(R.string.invalid_token) else null
 
         }
 
@@ -108,8 +109,10 @@ class AuthFragment : Fragment(R.layout.auth_fragment) {
     }
 
     private fun navigateToRepositoriesList() {
-        findNavController().navigate(AuthFragmentDirections
-            .actionAuthFragmentToRepositoriesListFragment(true))
+        findNavController().navigate(
+            AuthFragmentDirections
+                .actionAuthFragmentToRepositoriesListFragment(true)
+        )
     }
 
 }

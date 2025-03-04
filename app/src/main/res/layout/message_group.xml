@@ -10,36 +10,36 @@
         android:id="@+id/tvMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="@dimen/massage_padding"
+        android:textSize="@dimen/message_text_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:textSize="@dimen/message_text_size"
-        android:padding="@dimen/massage_padding"
         tools:text="Something error"
-        tools:textColor="@color/errorMessage"/>
+        tools:textColor="@color/errorMessage" />
 
     <ImageView
         android:id="@+id/ivRequestState"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="18dp"
         android:contentDescription="@string/desc_iv_request_state"
+        android:src="@drawable/ic_something_wrong"
         app:layout_constraintBottom_toTopOf="@id/tvMessage"
         app:layout_constraintEnd_toEndOf="@id/tvMessage"
-        app:layout_constraintStart_toStartOf="@id/tvMessage"
-        android:layout_marginBottom="18dp"
-        android:src="@drawable/ic_something_wrong"/>
+        app:layout_constraintStart_toStartOf="@id/tvMessage" />
 
     <TextView
         android:id="@+id/tvExtraInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="@dimen/extra_info_padding"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="@dimen/extra_info_text_size"
         app:layout_constraintEnd_toEndOf="@id/tvMessage"
         app:layout_constraintStart_toStartOf="@id/tvMessage"
         app:layout_constraintTop_toBottomOf="@id/tvMessage"
-        android:textColor="?android:textColorPrimary"
-        android:textSize="@dimen/extra_info_text_size"
-        android:padding="@dimen/extra_info_padding"
         tools:text="Check your something" />
 
     <include

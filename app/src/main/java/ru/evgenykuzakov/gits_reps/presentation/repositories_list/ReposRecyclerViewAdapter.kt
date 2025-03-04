@@ -35,7 +35,7 @@ class ReposRecyclerViewAdapter @Inject constructor(
             binding.tvName.text = repo.name
             binding.tvLanguage.text = repo.language
             binding.tvAboutRepo.text = repo.description
-            if (repo.description.isEmpty()){
+            if (repo.description.isEmpty()) {
                 binding.tvAboutRepo.visibility = View.GONE
             } else binding.tvAboutRepo.visibility = View.VISIBLE
             repo.language?.let {

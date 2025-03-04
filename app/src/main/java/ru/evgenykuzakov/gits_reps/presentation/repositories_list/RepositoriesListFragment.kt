@@ -9,14 +9,12 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavOptions
-import androidx.navigation.NavOptionsBuilder
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
 import ru.evgenykuzakov.gits_reps.R
 import ru.evgenykuzakov.gits_reps.common.ErrorsDescriptionConstants
-import ru.evgenykuzakov.gits_reps.data.storage.KeyValueStorage
 import ru.evgenykuzakov.gits_reps.databinding.RepositoriesListFragmentBinding
 import ru.evgenykuzakov.gits_reps.domain.model.Repo
 import ru.evgenykuzakov.gits_reps.presentation.repositories_list.ReposRecyclerViewAdapter.OnItemClickListener
@@ -50,7 +48,7 @@ class RepositoriesListFragment : Fragment(R.layout.repositories_list_fragment) {
         bindToViewModel()
     }
 
-    private fun bindToViewModel(){
+    private fun bindToViewModel() {
         viewModel.isUserAuth.observe(viewLifecycleOwner) { isUserAuth ->
             if (!isUserAuth) {
                 navigateToAuth()
@@ -83,9 +81,11 @@ class RepositoriesListFragment : Fragment(R.layout.repositories_list_fragment) {
                     ErrorsDescriptionConstants.UNEXPECTED_ERROR -> {
                         setMessageGroupThenUnexpectedError()
                     }
+
                     ErrorsDescriptionConstants.NO_INTERNET_CONNECTION_ERROR -> {
                         setMessageGroupThenNoInternetConnectionError()
                     }
+
                     else -> setMessageGroupThenUnexpectedError()
                 }
             }
@@ -101,7 +101,7 @@ class RepositoriesListFragment : Fragment(R.layout.repositories_list_fragment) {
             }
         })
         binding.messageGroup.bt.root.setOnClickListener {
-            if (viewModel.state.value != RepositoriesListViewModel.State.Loading){
+            if (viewModel.state.value != RepositoriesListViewModel.State.Loading) {
                 viewModel.onActionButtonPressed()
             }
         }

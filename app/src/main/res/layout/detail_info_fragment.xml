@@ -85,11 +85,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/detail_info_default_drawable_padding"
+                android:text="@string/stars"
                 android:textColor="?android:textColorPrimary"
                 android:textSize="@dimen/detail_info_main_text_size"
                 app:layout_constraintStart_toEndOf="@id/tvStartsRate"
-                app:layout_constraintTop_toTopOf="@id/tvStartsRate"
-                android:text="@string/stars" />
+                app:layout_constraintTop_toTopOf="@id/tvStartsRate" />
 
             <TextView
                 android:id="@+id/tvForksRate"
@@ -100,9 +100,9 @@
                 android:textSize="@dimen/detail_info_main_text_size"
                 app:drawableStartCompat="@drawable/ic_forks"
                 app:layout_constraintEnd_toStartOf="@id/tvForks"
+                app:layout_constraintHorizontal_chainStyle="packed"
                 app:layout_constraintStart_toEndOf="@+id/tvStars"
                 app:layout_constraintTop_toTopOf="@id/tvStartsRate"
-                app:layout_constraintHorizontal_chainStyle="packed"
                 tools:text="255" />
 
             <TextView
@@ -110,21 +110,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/detail_info_default_drawable_padding"
+                android:text="@string/forks"
                 android:textColor="?android:textColorPrimary"
                 android:textSize="@dimen/detail_info_main_text_size"
-                app:layout_constraintStart_toEndOf="@id/tvForksRate"
                 app:layout_constraintEnd_toStartOf="@id/tvWatchersRate"
-                app:layout_constraintTop_toTopOf="@id/tvForksRate"
-                android:text="@string/forks" />
+                app:layout_constraintStart_toEndOf="@id/tvForksRate"
+                app:layout_constraintTop_toTopOf="@id/tvForksRate" />
 
             <TextView
                 android:id="@+id/tvWatchersRate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/detail_info_default_drawable_padding"
                 android:drawablePadding="@dimen/detail_info_default_drawable_padding"
                 android:textColor="@color/watchersColor"
                 android:textSize="@dimen/detail_info_main_text_size"
-                android:layout_marginEnd="@dimen/detail_info_default_drawable_padding"
                 app:drawableStartCompat="@drawable/ic_watchers"
                 app:layout_constraintEnd_toStartOf="@id/tvWatchers"
                 app:layout_constraintTop_toTopOf="@id/tvForks"
@@ -134,11 +134,11 @@
                 android:id="@+id/tvWatchers"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@string/watchers"
                 android:textColor="?android:textColorPrimary"
                 android:textSize="@dimen/detail_info_main_text_size"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/tvWatchersRate"
-                android:text="@string/watchers" />
+                app:layout_constraintTop_toTopOf="@id/tvWatchersRate" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

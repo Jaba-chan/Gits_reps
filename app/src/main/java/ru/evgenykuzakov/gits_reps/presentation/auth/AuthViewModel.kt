@@ -15,8 +15,6 @@ import ru.evgenykuzakov.gits_reps.data.storage.KeyValueStorage
 import ru.evgenykuzakov.gits_reps.domain.use_case.AuthUseCase
 import javax.inject.Inject
 
-private const val INVALID_TOKEN_ERROR_CODE = 401
-
 @HiltViewModel
 class AuthViewModel @Inject constructor(
     private val authUseCase: AuthUseCase,
@@ -55,6 +53,7 @@ class AuthViewModel @Inject constructor(
                     if (result.message == ErrorsDescriptionConstants.INVALID_TOKEN_ERROR)
                         _state.value = State.InvalidInput(result.message)
                     else _action.emit(Action.ShowError(ErrorsDescriptionConstants.UNEXPECTED_ERROR))
+
                 is Resource.Loading -> _state.value = State.Loading
                 is Resource.Success -> {
                     _action.emit(Action.RouteToMain)

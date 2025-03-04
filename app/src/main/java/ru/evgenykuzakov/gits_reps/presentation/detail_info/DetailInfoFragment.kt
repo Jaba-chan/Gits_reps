@@ -44,23 +44,31 @@ class DetailInfoFragment : Fragment(R.layout.detail_info_fragment) {
         bindToViewModel()
     }
 
-    private fun bindToViewModel(){
-        viewModel.repoName.observe(viewLifecycleOwner){ name ->
+    private fun bindToViewModel() {
+        viewModel.repoName.observe(viewLifecycleOwner) { name ->
             binding.toolbar.tvTitle.text = name
         }
 
         viewModel.state.observe(viewLifecycleOwner) { state ->
-            binding.pbDetailInfo.root.visibility = if (state == RepositoryInfoViewModel.State.Loading) View.VISIBLE else View.INVISIBLE
-            binding.messageGroup.root.visibility = if (state is RepositoryInfoViewModel.State.Error) View.VISIBLE else View.GONE
-            binding.clDetailInfo.visibility = if (state is RepositoryInfoViewModel.State.Loaded) View.VISIBLE else View.GONE
-            if (state is RepositoryInfoViewModel.State.Loaded){
+            binding.pbDetailInfo.root.visibility =
+                if (state == RepositoryInfoViewModel.State.Loading) View.VISIBLE else View.INVISIBLE
+            binding.messageGroup.root.visibility =
+                if (state is RepositoryInfoViewModel.State.Error) View.VISIBLE else View.GONE
+            binding.clDetailInfo.visibility =
+                if (state is RepositoryInfoViewModel.State.Loaded) View.VISIBLE else View.GONE
+            if (state is RepositoryInfoViewModel.State.Loaded) {
                 doThenRepositoryInfoStateIsLoaded(state.githubRepo)
-                binding.pbReadme.root.visibility = if (state.readmeState == RepositoryInfoViewModel.ReadmeState.Loading) View.VISIBLE else View.INVISIBLE
-                binding.messageGroup.root.visibility = if (state.readmeState is RepositoryInfoViewModel.ReadmeState.Error) View.VISIBLE else View.GONE
-                binding.tvReadme.visibility = if (state.readmeState is RepositoryInfoViewModel.ReadmeState.Loaded || state.readmeState == RepositoryInfoViewModel.ReadmeState.Empty) View.VISIBLE else View.INVISIBLE
-                when (state.readmeState){
-                    RepositoryInfoViewModel.ReadmeState.Empty -> binding.tvReadme.text = getString(R.string.no_readme_md)
-                    is RepositoryInfoViewModel.ReadmeState.Loaded ->setMarkdown(state.readmeState.markdown)
+                binding.pbReadme.root.visibility =
+                    if (state.readmeState == RepositoryInfoViewModel.ReadmeState.Loading) View.VISIBLE else View.INVISIBLE
+                binding.messageGroup.root.visibility =
+                    if (state.readmeState is RepositoryInfoViewModel.ReadmeState.Error) View.VISIBLE else View.GONE
+                binding.tvReadme.visibility =
+                    if (state.readmeState is RepositoryInfoViewModel.ReadmeState.Loaded || state.readmeState == RepositoryInfoViewModel.ReadmeState.Empty) View.VISIBLE else View.INVISIBLE
+                when (state.readmeState) {
+                    RepositoryInfoViewModel.ReadmeState.Empty -> binding.tvReadme.text =
+                        getString(R.string.no_readme_md)
+
+                    is RepositoryInfoViewModel.ReadmeState.Loaded -> setMarkdown(state.readmeState.markdown)
                     else -> {}
                 }
             }
@@ -99,7 +107,7 @@ class DetailInfoFragment : Fragment(R.layout.detail_info_fragment) {
         }
     }
 
-    private fun setMarkdown(content: String){
+    private fun setMarkdown(content: String) {
         val markwon = Markwon.builder(requireContext()).build()
         markwon.setMarkdown(binding.tvReadme, decodeBase64(content))
     }

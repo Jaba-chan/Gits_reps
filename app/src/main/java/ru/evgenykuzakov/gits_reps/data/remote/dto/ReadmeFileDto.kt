@@ -6,8 +6,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class ReadmeFileDto(
-    @SerialName("content") @SerializedName("content")
-    val content: String,
+    @SerialName("content") @SerializedName("content") val content: String,
 )
 
 

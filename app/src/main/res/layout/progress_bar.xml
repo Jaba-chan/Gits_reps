@@ -4,7 +4,7 @@
     android:layout_width="@dimen/pb_small_size"
     android:layout_height="@dimen/pb_small_size"
     android:layout_gravity="center"
-    android:indeterminateDrawable="@drawable/custom_progress_bar"
     android:backgroundTint="@color/transparent"
+    android:indeterminateDrawable="@drawable/custom_progress_bar"
     android:visibility="gone"
     tools:visibility="visible" />

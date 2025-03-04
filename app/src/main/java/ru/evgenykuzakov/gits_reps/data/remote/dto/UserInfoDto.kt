@@ -7,12 +7,10 @@ import ru.evgenykuzakov.gits_reps.domain.model.UserInfo
 
 @Serializable
 data class UserInfoDto(
-    @SerialName("id")
-    val id: Int,
-    @SerialName("login")
-    val login: String,
+    @SerialName("id") val id: Int,
+    @SerialName("login") val login: String,
 )
 
-fun UserInfoDto.toUserInfo(): UserInfo{
+fun UserInfoDto.toUserInfo(): UserInfo {
     return UserInfo(login)
 }

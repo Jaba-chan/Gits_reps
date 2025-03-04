@@ -1,9 +1,8 @@
 package ru.evgenykuzakov.gits_reps.domain.use_case
 
-import android.util.Log
-import retrofit2.HttpException
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import retrofit2.HttpException
 import ru.evgenykuzakov.gits_reps.common.ErrorsDescriptionConstants
 import ru.evgenykuzakov.gits_reps.common.Resource
 import ru.evgenykuzakov.gits_reps.data.remote.dto.toRepo

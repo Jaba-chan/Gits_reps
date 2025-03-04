@@ -1,7 +1,6 @@
 package ru.evgenykuzakov.gits_reps.di
 
 import android.content.Context
-import android.util.TypedValue
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

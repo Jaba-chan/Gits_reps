@@ -6,6 +6,5 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class OwnerDto(
-    @SerialName("login")
-    @SerializedName("login") val login: String
+    @SerialName("login") @SerializedName("login") val login: String
 )

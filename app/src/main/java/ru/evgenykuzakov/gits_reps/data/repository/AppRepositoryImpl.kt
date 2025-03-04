@@ -42,6 +42,6 @@ class AppRepositoryImpl @Inject constructor(
 
     private fun getCachedAuthToken(): String {
         return cachedAuthToken ?: ("token ${keyValueStorage.authToken ?: ""}"
-        ).also { cachedAuthToken = it }
+                ).also { cachedAuthToken = it }
     }
 }

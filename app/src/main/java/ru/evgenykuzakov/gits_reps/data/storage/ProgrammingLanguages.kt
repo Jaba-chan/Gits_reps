@@ -8,7 +8,7 @@ import ru.evgenykuzakov.gits_reps.R
 import java.io.InputStream
 import javax.inject.Inject
 
-private const  val LANGUAGE_COLORS_YML_FILE_NAME = "languages.yml"
+private const val LANGUAGE_COLORS_YML_FILE_NAME = "languages.yml"
 
 class ProgrammingLanguages @Inject constructor(
     private val yaml: Yaml,
@@ -30,7 +30,8 @@ class ProgrammingLanguages @Inject constructor(
     }
 
     fun getLanguageColor(lang: String): Int {
-        val color = languageColors[lang] ?: return ContextCompat.getColor(context, R.color.transparent)
+        val color =
+            languageColors[lang] ?: return ContextCompat.getColor(context, R.color.transparent)
         return Color.parseColor(color)
     }
 }

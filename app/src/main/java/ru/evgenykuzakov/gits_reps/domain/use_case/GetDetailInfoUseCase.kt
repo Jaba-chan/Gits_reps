@@ -22,8 +22,7 @@ class GetDetailInfoUseCase @Inject constructor(
         } catch (e: HttpException) {
             emit(
                 Resource.Error(
-                    e.message ?: ErrorsDescriptionConstants.UNEXPECTED_ERROR,
-                    code = e.code()
+                    e.message ?: ErrorsDescriptionConstants.UNEXPECTED_ERROR, code = e.code()
                 )
             )
         } catch (e: IOException) {

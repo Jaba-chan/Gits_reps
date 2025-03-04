@@ -1,6 +1,5 @@
 package ru.evgenykuzakov.gits_reps.domain.use_case
 
-import android.util.Log
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
@@ -47,7 +46,7 @@ class AuthUseCase @Inject constructor(
                     ErrorsDescriptionConstants.NO_INTERNET_CONNECTION_ERROR
                 )
             )
-        } catch (e: IllegalArgumentException){
+        } catch (e: IllegalArgumentException) {
             emit(
                 Resource.Error(
                     ErrorsDescriptionConstants.INVALID_TOKEN_ERROR

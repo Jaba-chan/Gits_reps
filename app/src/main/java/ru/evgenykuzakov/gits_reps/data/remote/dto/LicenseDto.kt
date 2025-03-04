@@ -6,6 +6,5 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class LicenseDto(
-    @SerialName("spdx_id")
-    @SerializedName("spdx_id") val spdxId: String
+    @SerialName("spdx_id") @SerializedName("spdx_id") val spdxId: String
 )

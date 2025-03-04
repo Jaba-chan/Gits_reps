@@ -1,17 +1,12 @@
 package ru.evgenykuzakov.gits_reps.presentation.repositories_list
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.launch
 import ru.evgenykuzakov.gits_reps.common.ErrorsDescriptionConstants
 import ru.evgenykuzakov.gits_reps.common.Resource
 import ru.evgenykuzakov.gits_reps.data.storage.KeyValueStorage

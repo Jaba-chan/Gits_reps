@@ -13,9 +13,7 @@ class GetRepoReadmeUseCase @Inject constructor(
     private val repository: AppRepository
 ) {
     operator fun invoke(
-        owner: String,
-        repo: String,
-        branchName: String
+        owner: String, repo: String, branchName: String
     ): Flow<Resource<String>> = flow {
         try {
             emit(Resource.Loading())
@@ -29,15 +27,13 @@ class GetRepoReadmeUseCase @Inject constructor(
             when (e.code()) {
                 404 -> emit(
                     Resource.Error(
-                        e.message ?: ErrorsDescriptionConstants.NOT_FOUND_ERROR,
-                        code = e.code()
+                        e.message ?: ErrorsDescriptionConstants.NOT_FOUND_ERROR, code = e.code()
                     )
                 )
 
                 else -> emit(
                     Resource.Error(
-                        e.message ?: ErrorsDescriptionConstants.UNEXPECTED_ERROR,
-                        code = e.code()
+                        e.message ?: ErrorsDescriptionConstants.UNEXPECTED_ERROR, code = e.code()
                     )
                 )
             }

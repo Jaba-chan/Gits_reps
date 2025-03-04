@@ -18,7 +18,7 @@ data class RepoDto(
     @SerializedName("watchers_count") val watchersCount: Int?
 )
 
-fun RepoDto.toRepo(): Repo{
+fun RepoDto.toRepo(): Repo {
     return Repo(
         owner = owner.login,
         name = name,
